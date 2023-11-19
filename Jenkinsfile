@@ -2,7 +2,7 @@ node {
     def WORKSPACE = "/var/lib/jenkins/workspace/blog-service-deploy"
     def dockerImageTag = "blog-service:latest"
 try{
-    notifyBuild('STARTED')
+    //notifyBuild('STARTED')
     stage('Clone Repo') {
         // for display purposes
         // Get some code from a GitHub repository
