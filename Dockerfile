@@ -13,5 +13,6 @@ FROM amazoncorretto:17-alpine-jdk
 WORKDIR /app
 # Copy the built JAR file from the previous stage to the container
 COPY --from=build /app/target/blog-service-0.0.1-SNAPSHOT.jar .
+RUN chmod +x blog-service-0.0.1-SNAPSHOT.jar
 # Set the command to run the application
 CMD ["java", "-jar", "blog-service-0.0.1-SNAPSHOT.jar"]
