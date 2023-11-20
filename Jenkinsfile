@@ -16,7 +16,7 @@ try{
           echo "Docker Image Tag Name: ${dockerImageTag}"
           sh "docker stop blog-service || true && docker rm blog-service || true"
           sh "docker network ls | grep adripoli || docker network create adripoli"
-          sh "docker container run --network adripoli --name blog-service -d blog-service -p 8090:8090"
+          sh "docker container run --network adripoli -p 8090:8090 --name blog-service -d blog-service"
     }
 }catch(e){
     currentBuild.result = "FAILED"
